@@ -1,0 +1,19 @@
+## Create a Matrix A and a variable inverse in R prompt
+## set A to a matrix (i.e) a sqaure invertible matrix
+## set inverse to NULL
+## then call cacheSolve(makeCacheMatrix(A))or with any other matrix
+
+
+
+makeCacheMatrix<- function(x = matrix()) {
+        set <- function(y) {
+                A<<-y   ## sets A to passed argument
+                  }
+        get <- function() x
+        setinv <- function(a) inverse <<- a
+        getinv <- function() inverse
+	  
+        list(set = set, get = get,
+             setinv = setinv,
+             getinv = getinv)
+}
