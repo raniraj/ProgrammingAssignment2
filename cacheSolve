@@ -1,0 +1,16 @@
+cacheSolve <- function(x, ...) {
+      inverse <- x$getinv()  ## gets the inverse already calculated
+	data <- x$get()        ## gets the matrix passed as argment
+      ## checks if the inverse is not null and the passed matrix and 
+ 	## matrix available in environment are identical
+	if(!is.null(inverse) & identical(data,A)) {
+         message("getting cached data")
+                return(inverse)
+        }
+        ## if matrix not identical and inverse not available new inverse is
+	  ## calculated and the global variables inverse and A are set 
+        inverse <- solve(data)
+        x$setinv(inverse)
+	  x$set(data)
+        inverse
+}
